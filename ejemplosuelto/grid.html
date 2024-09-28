@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo Grid Adaptable</title>
+  <title>Ejemplo Grid</title>
   <style>
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Columnas que se adaptan al ancho */
-      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr; /* Tres columnas de igual tamaño */
+      grid-template-rows: auto auto; /* Dos filas de altura automática */
+      gap: 10px; /* Espacio entre los elementos */
       padding: 10px;
 box-sizing:border-box;
     }
 
     .grid-item {
-      background-color: #8db596;
+      background-color: violet;
       padding: 20px;
       text-align: center;
       border: 2px solid #666;
-box-sizing: border-box;
+box-sizing:border-box
     }
   </style>
 </head>
