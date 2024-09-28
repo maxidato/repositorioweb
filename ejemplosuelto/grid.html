@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo Grid Flexible</title>
+  <title>Ejemplo Grid Solucionado</title>
   <style>
     * {
       margin: 0;
@@ -17,13 +17,13 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(0, 1fr)); /* Columnas completamente flexibles */
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas flexibles que se adaptan al espacio */
       gap: 10px;
       padding: 10px;
     }
 
     .grid-item {
-      background-color: orange;
+      background-color: violet;
       padding: 20px;
       text-align: center;
       border: 2px solid #666;
