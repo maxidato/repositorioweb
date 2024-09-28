@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejemplo Grid</title>
+  <title>Ejemplo Grid Adaptable</title>
   <style>
     .grid-container {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr; /* Tres columnas de igual tamaño */
-      grid-template-rows: auto auto; /* Dos filas de altura automática */
-      gap: 10px; /* Espacio entre los elementos */
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Columnas que se adaptan al ancho */
+      gap: 10px;
       padding: 10px;
     }
 
