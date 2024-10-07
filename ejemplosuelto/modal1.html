@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Modal</title>
+    <style>
+/* Estilo para el contenedor de la ventana modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fija la posición en la pantalla */
+    z-index: 1; /* Aparece sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100%; /* Ocupa todo el alto de la pantalla */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Estilo para el contenido de la ventana modal */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Centra la ventana modal vertical y horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Anchura de la ventana modal */
+}
+
+/* Estilo para el botón de cerrar (x) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+
+
+</head>
+<body>
+
+<!-- Botón que abrirá la ventana modal -->
+<button id="openModal">Abrir Modal</button>
+
+<!-- Contenedor de la ventana modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Este es el contenido de la ventana modal.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
