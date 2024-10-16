@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos JS en HTML</title>
+    <style>
+        #cuadroColor {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 20px 0;
+        }
+        #btnHover {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #btnHover:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos Interactivos en JavaScript</h1>
+    
+    <button id="btnHover">Pasa el cursor aquí</button>
+    <div id="cuadroColor"></div>
+
+    <script>
+        // Evento 1: Cambiar el color del cuadro al pasar el cursor sobre el botón.
+        document.getElementById('btnHover').addEventListener('mouseover', function() {
+            document.getElementById('cuadroColor').style.backgroundColor = 'green';
+        });
+
+        // Evento 2: Restaurar el color del cuadro cuando el cursor salga del botón.
+        document.getElementById('btnHover').addEventListener('mouseout', function() {
+            document.getElementById('cuadroColor').style.backgroundColor = 'red';
+        });
+    </script>
+    
+</body>
+</html>
