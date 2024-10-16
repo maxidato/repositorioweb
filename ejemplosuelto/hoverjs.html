@@ -11,30 +11,37 @@
             background-color: red;
             margin: 20px 0;
         }
-        #btnTouch {
+        button {
             padding: 10px 20px;
-            background-color: blue;
             color: white;
             border: none;
             cursor: pointer;
+            margin: 5px;
+        }
+        #btnRojo {
+            background-color: red;
+        }
+        #btnVerde {
+            background-color: green;
         }
     </style>
 </head>
 <body>
-    <h1>Eventos Interactivos en Móvil 2024</h1>
+    <h1>Cambia el color del cuadro</h1>
     
-    <button id="btnTouch">Toca aquí</button>
+    <button id="btnRojo">Rojo</button>
+    <button id="btnVerde">Verde</button>
     <div id="cuadroColor"></div>
 
     <script>
-        // Evento 1: Cambiar el color del cuadro al tocar el botón.
-        document.getElementById('btnTouch').addEventListener('click', function() {
-            document.getElementById('cuadroColor').style.backgroundColor = 'green';
+        // Evento para cambiar a rojo
+        document.getElementById('btnRojo').addEventListener('click', function() {
+            document.getElementById('cuadroColor').style.backgroundColor = 'red';
         });
 
-        // Evento 2: Cambiar el color del cuadro nuevamente al tocarlo.
-        document.getElementById('cuadroColor').addEventListener('click', function() {
-            document.getElementById('cuadroColor').style.backgroundColor = 'red';
+        // Evento para cambiar a verde
+        document.getElementById('btnVerde').addEventListener('click', function() {
+            document.getElementById('cuadroColor').style.backgroundColor = 'green';
         });
     </script>
     
