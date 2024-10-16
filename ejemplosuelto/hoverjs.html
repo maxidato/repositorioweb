@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos JS en HTML</title>
+    <title>Eventos JS en Android</title>
     <style>
         #cuadroColor {
             width: 100px;
@@ -11,32 +11,29 @@
             background-color: red;
             margin: 20px 0;
         }
-        #btnHover {
+        #btnTouch {
             padding: 10px 20px;
             background-color: blue;
             color: white;
             border: none;
             cursor: pointer;
         }
-        #btnHover:hover {
-            background-color: darkblue;
-        }
     </style>
 </head>
 <body>
-    <h1>Eventos Interactivos en JavaScript</h1>
+    <h1>Eventos Interactivos en Móvil</h1>
     
-    <button id="btnHover">Pasa el cursor aquí</button>
+    <button id="btnTouch">Toca aquí</button>
     <div id="cuadroColor"></div>
 
     <script>
-        // Evento 1: Cambiar el color del cuadro al pasar el cursor sobre el botón.
-        document.getElementById('btnHover').addEventListener('mouseover', function() {
+        // Evento 1: Cambiar el color del cuadro al tocar el botón.
+        document.getElementById('btnTouch').addEventListener('click', function() {
             document.getElementById('cuadroColor').style.backgroundColor = 'green';
         });
 
-        // Evento 2: Restaurar el color del cuadro cuando el cursor salga del botón.
-        document.getElementById('btnHover').addEventListener('mouseout', function() {
+        // Evento 2: Cambiar el color del cuadro nuevamente al tocarlo.
+        document.getElementById('cuadroColor').addEventListener('click', function() {
             document.getElementById('cuadroColor').style.backgroundColor = 'red';
         });
     </script>
