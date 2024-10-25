@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos JS en Android</title>
     <style>
-        #cuadroColor {
+        #cuadro {
             width: 100px;
             height: 100px;
             background-color: white;
@@ -18,10 +18,10 @@
             border: none;
             margin: 5px;
         }
-        #botonRojo {
+        #rojo {
             background-color: red;
         }
-        #botonVerde {
+        #verde {
             background-color: green;
         }
     </style>
@@ -29,19 +29,19 @@
 <body>
     <h1>Cambia el color del cuadro</h1>
     
-    <button id="botonRojo">Rojo</button>
-    <button id="botonVerde">Verde</button>
-    <div id="cuadroColor"></div>
+    <button id="rojo">Rojo</button>
+    <button id="verde">Verde</button>
+    <div id="cuadro"></div>
 
     <script>
         // Evento para cambiar a rojo
-        document.getElementById('botonRojo').addEventListener('click', function() {
-            document.getElementById('cuadroColor').style.backgroundColor = 'red';
+        document.getElementById('rojo').addEventListener('click', function() {
+            document.getElementById('cuadro').style.backgroundColor = 'red';
         });
 
         // Evento para cambiar a verde
-        document.getElementById('botonVerde').addEventListener('click', function() {
-            document.getElementById('cuadroColor').style.backgroundColor = 'green';
+        document.getElementById('verde').addEventListener('click', function() {
+            document.getElementById('cuadro').style.backgroundColor = 'green';
         });
     </script>
     
