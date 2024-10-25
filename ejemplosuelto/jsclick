@@ -18,10 +18,10 @@
             border: none;
             margin: 5px;
         }
-        #btnRojo {
+        #botonRojo {
             background-color: red;
         }
-        #btnVerde {
+        #botonVerde {
             background-color: green;
         }
     </style>
@@ -29,18 +29,18 @@
 <body>
     <h1>Cambia el color del cuadro</h1>
     
-    <button id="btnRojo">Rojo</button>
-    <button id="btnVerde">Verde</button>
+    <button id="botonRojo">Rojo</button>
+    <button id="botonVerde">Verde</button>
     <div id="cuadroColor"></div>
 
     <script>
         // Evento para cambiar a rojo
-        document.getElementById('btnRojo').addEventListener('click', function() {
+        document.getElementById('botonRojo').addEventListener('click', function() {
             document.getElementById('cuadroColor').style.backgroundColor = 'red';
         });
 
         // Evento para cambiar a verde
-        document.getElementById('btnVerde').addEventListener('click', function() {
+        document.getElementById('botonVerde').addEventListener('click', function() {
             document.getElementById('cuadroColor').style.backgroundColor = 'green';
         });
     </script>
