@@ -66,7 +66,7 @@ padding-left:0px;
 }
       
 
-.header {
+header {
     background-image: url('../imagenes/fondo.jpg'); /* Ruta de la imagen */
  
    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
