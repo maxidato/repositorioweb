@@ -52,4 +52,16 @@ padding-left:0px;
             padding: 1rem;
         }
 
+
+/* Media query para pantallas de tamaño móvil */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Cambia la dirección de flex a columna en pantallas pequeñas */
+    }
+
+    aside {
+        width: 100%; /* Ancho completo del aside */
+        margin-right: 0; /* Elimina el margen derecho */
+    }
+}
       
