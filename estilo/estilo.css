@@ -35,7 +35,7 @@ aside ul li {
 padding-left:0px;
 }
         
-        .contenido { }
+        .contenido {width:100%; }
         section {
             flex: 1; /* Cada sección ocupa el mismo espacio */
             padding: 1rem;
