@@ -76,7 +76,7 @@ header {
 
 #cajadenoticias {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center; /* Opcional: Alinea los elementos verticalmente */
     width: 100%; /* Para asegurarte de que ocupe todo el ancho del contenedor */
 }
