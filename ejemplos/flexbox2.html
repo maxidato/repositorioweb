@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox ej2</title>
+    <style>
+
+.flex-container {
+flex-direction: row;
+display: flex;
+flex-wrap: wrap; 
+justify-content: flex-start;
+align-items: center;
+
+border: 2px solid black;
+padding: 10px;
+box-sizing: content-box;
+background-color: #666;
+        }
+
+ .flex-container div {
+margin-right: 20px;
+margin-bottom:40px;
+border: 2px solid black;
+padding: 20px;
+width: 60px;
+height: 60px;
+box-sizing: content-box;
+background-color: white;
+        }
+
+ label {  font-size: 24px; }
+option {   font-size: 20px; }
+#opciones {   font-size: 20px; }
+    </style>
+</head>
+<body>
+<h1>
+Modificacion de flex-container css:
+</h1>
+<p style="font-size:24px;">
+Se vera las distintas distribuciones de los elementos del contenedor
+</p>
+    <form>
+        <label for="opciones">justify-content:</label>
+        <select id="opciones" name="opciones">
+            <option value="">Elegir</option>
+            <option value="flex-start">flex-start</option>
+            <option value="flex-end">flex-end</option>
+            <option value="center">center</option>
+            <option value="space-between">space-between</option>
+            <option value="space-around">space-around</option>
+            <option value="space-evenly">space-evenly</option>
+            <option value="start">start</option>
+            <option value="end">end</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+        </select>
+    </form>
+<br>
+    <div class="flex-container">
+        <div>Div 1</div><div>Div 2</div><div>Div 3</div><div>Div 4</div><div>Div 5</div><div>Div 6</div><div>Div 7</div>
+        <div>Div 8</div><div>Div 9</div><div>Div 10</div><div>Div 11</div><div>Div 12</div><div>Div 13</div><div>Div 14</div>
+        <div>Div 15</div><div>Div 16</div><div>Div 17</div><div>Div 18</div><div>Div 19</div><div>Div 20</div><div>Div 21</div>
+    </div>
+
+<script>
+        // Evento para cambiar el color del cuadro según la opción seleccionada
+        document.getElementById('opciones').addEventListener('change', function() {
+            document.querySelector('.flex-container').style.justifyContent = this.value; // Cambia el color directamente
+        });
+    </script>
+</body>
+</html>
