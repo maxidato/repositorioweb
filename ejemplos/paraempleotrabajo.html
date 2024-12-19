@@ -119,6 +119,7 @@
 
     <!-- Mensaje oculto -->
     <button id="reveal-btn">Mostrar mensaje oculto</button>
+    <button id="hide-btn">Ocultar mensaje oculto</button>
     <p id="hidden-message">¡Bien hecho! Este es el mensaje oculto.</p>
 
     <script>
@@ -132,6 +133,12 @@
         document.getElementById("reveal-btn").addEventListener("click", function() {
             const message = document.getElementById("hidden-message");
             message.style.display = "block";
+        });
+
+        // Ocultar mensaje oculto
+        document.getElementById("hide-btn").addEventListener("click", function() {
+            const message = document.getElementById("hidden-message");
+            message.style.display = "none";
         });
     </script>
 </body>
