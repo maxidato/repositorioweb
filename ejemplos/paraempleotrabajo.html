@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Trabajo - Solicitud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        /* Estilos para el formulario */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para Flexbox */
+        .flexbox-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .flexbox-item {
+            width: 100px;
+            height: 100px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Mensaje oculto */
+        #hidden-message {
+            display: none;
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Formulario de Inicio de Sesión -->
+    <div class="form-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Contenedor Flexbox -->
+    <div class="flexbox-container">
+        <div class="flexbox-item">1</div>
+        <div class="flexbox-item">2</div>
+        <div class="flexbox-item">3</div>
+    </div>
+
+    <!-- Mensaje oculto -->
+    <button id="reveal-btn">Mostrar mensaje oculto</button>
+    <p id="hidden-message">¡Bien hecho! Este es el mensaje oculto.</p>
+
+    <script>
+        // Manejo del formulario
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Formulario enviado correctamente.");
+        });
+
+        // Mostrar mensaje oculto
+        document.getElementById("reveal-btn").addEventListener("click", function() {
+            const message = document.getElementById("hidden-message");
+            message.style.display = "block";
+        });
+    </script>
+</body>
+</html>
