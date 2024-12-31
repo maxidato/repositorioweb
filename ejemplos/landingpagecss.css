@@ -39,7 +39,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     max-width: 400px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .imagen-producto {
