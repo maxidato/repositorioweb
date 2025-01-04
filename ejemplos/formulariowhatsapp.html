@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario whatsapp</title>
+</head>
+
+<body>
+<form id="form">
+  <label for="name">Nombre:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Correo Electrónico:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Mensaje:</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">Enviar por WhatsApp</button>
+</form>
+
+<script>
+  document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Capturar los datos del formulario
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Crear el enlace de WhatsApp
+    const phoneNumber = "+5491158901035"; // Reemplaza con el número de WhatsApp (con código de país)
+    const text = `Hola, mi nombre es ${name}. Mi correo es ${email}. Mensaje: ${message}`;
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+    // Redirigir al enlace de WhatsApp
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
+
+</body>
+</html>
