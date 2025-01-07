@@ -1,0 +1,18 @@
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const data = e.postData.contents;
+  const params = JSON.parse(data);
+  
+  // Validar si el correo ya existe
+  const rows = sheet.getDataRange().getValues();
+  for (let i = 1; i < rows.length; i++) {
+    if (rows[i][1] === params.correo) { // Supongamos que el correo está en la columna B
+      return ContentService.createTextOutput("exists");
+    }
+  }
+  
+  // Agregar los datos a la hoja
+  sheet.appendRow([params.nombre, params.correo, params.palabras]);
+  
+  return ContentService.createTextOutput("success");
+}
