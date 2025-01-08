@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos desde Google Sheets</title>
+</head>
+<body>
+    <h1>Tabla de productos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-datos">
+            <!-- Los datos se llenarán aquí -->
+        </tbody>
+    </table>
+
+    <script>
+        // URL del Apps Script
+        const url = "https://script.google.com/macros/s/AKfycbw5Mo3NqyDoO_SRz_Z4cz6TrnpyG2i_0p5O_syLnw1KPpamkYv1HiNW3asPy2wxUhjJRw/exec";
+
+        // Función para obtener y mostrar los datos
+        fetch(url)
+            .then(response => response.json())
+            .then(datos => {
+                const tabla = document.getElementById("tabla-datos");
+
+                // Llenar la tabla con los datos
+                datos.forEach(fila => {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td>${fila.producto}</td>
+                        <td>${fila.categoria}</td>
+                        <td>${fila.precio}</td>
+                    `;
+                    tabla.appendChild(tr);
+                });
+            })
+            .catch(error => {
+                console.error("Error al obtener los datos:", error);
+            });
+    </script>
+</body>
+</html>
