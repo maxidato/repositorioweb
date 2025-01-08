@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visor de Compras</title>
+  <script>
+    // Función para obtener los datos de Google Sheets
+    async function obtenerDatos() {
+      try {
+        const url = "https://script.google.com/macros/s/AKfycbw5Mo3NqyDoO_SRz_Z4cz6TrnpyG2i_0p5O_syLnw1KPpamkYv1HiNW3asPy2wxUhjJRw/exec";
+        const respuesta = await fetch(url);
+        const datos = await respuesta.json();
+
+        // Llamar a la función para mostrar los datos en la tabla
+        mostrarDatos(datos);
+      } catch (error) {
+        console.error("Error al obtener los datos:", error);
+      }
+    }
+
+    // Función para mostrar los datos en la tabla
+    function mostrarDatos(datos) {
+      const tablaCuerpo = document.getElementById("tabla-cuerpo");
+
+      // Limpiar la tabla antes de agregar los datos
+      tablaCuerpo.innerHTML = "";
+
+      // Recorrer los datos y agregarlos a la tabla
+      datos.forEach((fila) => {
+        const tr = document.createElement("tr");
+        fila.forEach((celda) => {
+          const td = document.createElement("td");
+          td.textContent = celda;
+          tr.appendChild(td);
+        });
+        tablaCuerpo.appendChild(tr);
+      });
+    }
+
+    // Cargar los datos al cargar la página
+    window.onload = obtenerDatos;
+  </script>
+</head>
+<body>
+  <h1>Visor de Compras</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Categoría</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-cuerpo">
+      <!-- Aquí se insertarán los datos dinámicamente -->
+    </tbody>
+  </table>
+</body>
+</html>
