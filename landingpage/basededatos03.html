@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Compras</title>
+</head>
+<body>
+    <h1>Listado de Compras</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="datosTabla">
+            <!-- Aquí se insertarán los datos -->
+        </tbody>
+    </table>
+
+    <script>
+        // URL de tu Apps Script
+        const url = "https://script.google.com/macros/s/AKfycbw5Mo3NqyDoO_SRz_Z4cz6TrnpyG2i_0p5O_syLnw1KPpamkYv1HiNW3asPy2wxUhjJRw/exec";
+
+        // Función para obtener los datos desde Apps Script
+        async function obtenerDatos() {
+            try {
+                const respuesta = await fetch(url); // Solicita los datos
+                const datos = await respuesta.json(); // Convierte la respuesta a JSON
+
+                const tabla = document.getElementById("datosTabla");
+                tabla.innerHTML = ""; // Limpia la tabla antes de llenarla
+
+                // Recorre los datos y crea filas en la tabla
+                datos.forEach(fila => {
+                    const nuevaFila = `
+                        <tr>
+                            <td>${fila.Producto}</td>
+                            <td>${fila.Categoria}</td>
+                            <td>${fila.Precio}</td>
+                        </tr>`;
+                    tabla.innerHTML += nuevaFila;
+                });
+            } catch (error) {
+                console.error("Error al obtener los datos:", error);
+            }
+        }
+
+        // Llama a la función al cargar la página
+        obtenerDatos();
+    </script>
+</body>
+</html>
