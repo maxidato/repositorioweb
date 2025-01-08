@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos desde Google Sheets</title>
+</head>
+<body>
+    <h1>Tabla de productos</h1>
+    
+    <div id="cargando">Cargando...</div>
+
+    <table id="tabla" style="border-collapse: collapse; margin: 0 auto;">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-datos">
+            <!-- Los datos se llenarán aquí -->
+        </tbody>
+    </table>
+
+    <script>
+        const url = "https://script.google.com/macros/s/AKfycbw5Mo3NqyDoO_SRz_Z4cz6TrnpyG2i_0p5O_syLnw1KPpamkYv1HiNW3asPy2wxUhjJRw/exec";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(datos => {
+                const tabla = document.getElementById("tabla-datos");
+                const tablaHTML = document.getElementById("tabla");
+                const cargando = document.getElementById("cargando");
+
+                // Llenar la tabla con los datos
+                datos.forEach(fila => {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td style="border: 1px solid black; padding: 5px;">${fila.producto}</td>
+                        <td style="border: 1px solid black; padding: 5px;">${fila.categoria}</td>
+                        <td style="border: 1px solid black; padding: 5px;">${fila.precio}</td>
+                    `;
+                    tabla.appendChild(tr);
+                });
+
+                // Ocultar el mensaje de "Cargando..." y mostrar la tabla
+                cargando.style.display = 'none';
+                tablaHTML.style.display = 'table'; // Cambiar a 'table' para mostrarla
+            })
+            .catch(error => {
+                console.error("Error al obtener los datos:", error);
+            });
+    </script>
+</body>
+</html>
