@@ -87,38 +87,49 @@
   <!-- Formulario de reserva -->
   <section class="container">
     <h2>Reserva tu cita ahora</h2>
-    <form>
-      <div>
-        <label for="name">Nombre completo</label>
-        <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
-      </div>
-      <div>
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
-      </div>
-      <div>
-        <label for="service">Servicio</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Selecciona un servicio</option>
-          <option value="corte">Corte de cabello</option>
-          <option value="tinte">Tinte de cabello</option>
-          <option value="peinado">Peinado</option>
-        </select>
-      </div>
-      <div>
-        <label for="date">Fecha</label>
-        <input type="date" id="date" name="date" required>
-      </div>
-      <div>
-        <label for="time">Hora</label>
-        <input type="time" id="time" name="time" required>
-      </div>
-      <div>
-        <label for="comments">Comentarios adicionales</label>
-        <textarea id="comments" name="comments" placeholder="Escribe algún detalle extra" rows="3"></textarea>
-      </div>
-      <button type="submit">Reservar ahora</button>
-    </form>
+ 
+
+
+
+
+<form action="https://script.google.com/macros/s/AKfycbygZILOlYWyZTt4R40nJaKW6gU7QLbJKRkWFxd6rLTncwL3EHqiqoJl8U3dbfZuoKSuDw/exec" method="POST">
+  <div>
+    <label for="name">Nombre completo</label>
+    <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+  </div>
+  <div>
+    <label for="email">Correo electrónico</label>
+    <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+  </div>
+  <div>
+    <label for="service">Servicio</label>
+    <select id="service" name="service" required>
+      <option value="" disabled selected>Selecciona un servicio</option>
+      <option value="corte">Corte de cabello</option>
+      <option value="tinte">Tinte de cabello</option>
+      <option value="peinado">Peinado</option>
+    </select>
+  </div>
+  <div>
+    <label for="date">Fecha</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+  <div>
+    <label for="time">Hora</label>
+    <input type="time" id="time" name="time" required>
+  </div>
+  <div>
+    <label for="comments">Comentarios adicionales</label>
+    <textarea id="comments" name="comments" placeholder="Escribe algún detalle extra" rows="3"></textarea>
+  </div>
+  <button type="submit">Reservar ahora</button>
+</form>
+
+   
+
+
+
+
   </section>
 </body>
 </html>
