@@ -87,7 +87,8 @@
   <!-- Formulario de reserva -->
   <section class="container">
     <h2>Reserva tu cita ahora</h2>
-    <form id="reservation-form">
+
+    <form id="reservationForm">
       <div>
         <label for="name">Nombre completo</label>
         <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
@@ -119,36 +120,51 @@
       </div>
       <button type="submit">Reservar ahora</button>
     </form>
+
+    <!-- Mensaje de error -->
+    <div id="error-message" style="color: red; display: none;">Hubo un problema al realizar la reserva. Intenta nuevamente.</div>
   </section>
 
   <script>
-    document.getElementById("reservation-form").addEventListener("submit", function(event) {
-      event.preventDefault(); // Evitar el envío del formulario de forma tradicional
+    document.getElementById('reservationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-      // Obtener los datos del formulario
-      var formData = new FormData(event.target);
-      var data = {};
-
-      formData.forEach(function(value, key) {
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
         data[key] = value;
       });
 
-      // Enviar los datos como JSON utilizando fetch
-      fetch('https://script.google.com/macros/s/AKfycbxvhrTQP90x4IMa2WHsu_vibTnqeVnSaE-7ptHKNlrxh_NQVVpkp_fbknN7-bhTxAZ5wA/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data) // Convertir los datos a formato JSON
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert("Tu reserva ha sido realizada con éxito");
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert("Hubo un problema al realizar tu reserva");
-      });
+      try {
+        // Realizamos la solicitud fetch
+        fetch('https://script.google.com/macros/s/AKfycbxvhrTQP90x4IMa2WHsu_vibTnqeVnSaE-7ptHKNlrxh_NQVVpkp_fbknN7-bhTxAZ5wA/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Hubo un problema al enviar la solicitud.');
+          }
+          return response.json();
+        })
+        .then(data => {
+          alert('Reserva realizada con éxito!');
+        })
+        .catch(error => {
+          console.error('Error en la solicitud:', error);
+          // Mostramos el mensaje de error en caso de falla
+          document.getElementById('error-message').style.display = 'block';
+        });
+      } catch (error) {
+        // Capturamos cualquier error fuera de fetch
+        console.error('Error en el bloque try-catch:', error.message);
+        console.error('Stack trace:', error.stack);
+        // Mostramos el mensaje de error
+        document.getElementById('error-message').style.display = 'block';
+      }
     });
   </script>
 </body>
